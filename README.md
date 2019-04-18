@@ -62,7 +62,7 @@ Tracking de errores, distribution tracing configuración en `newrelic.js`
 
 ## Newrelic - Overview
 <div style="text-align:center;margin:auto">
-    <img src ="status.png" />
+    <img src ="overview.png" />
 </div>
 
 ## Newrelic - Tracing

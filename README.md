@@ -86,3 +86,9 @@ Instala pm2 para manejar los procesos de node, levanta 4 instancias más info en
 ```
 $ docker-compose up
 ```
+
+## Performance (HTTP benchmarking)
+
+Para verificar la performance de la API se generó un script básico que simula varias peticiones HTTP a un endpoint
+utilizando [AutoCannon](https://github.com/mcollina/autocannon), hay que tener el servidor funcionando para correrlo
+abrir 2 consolas.

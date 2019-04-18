@@ -1,6 +1,6 @@
 {
   "name": "backend-app-meli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "dev": "node --inspect=5858 -r ts-node/register src/bin/www.ts",
     "start": "node build/server/bin/www.js",

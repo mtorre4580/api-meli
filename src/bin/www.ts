@@ -5,6 +5,7 @@ if (!process.env.NODE_ENV) {
 import 'newrelic';
 import * as http from 'http';
 import { server } from '../index';
+import logger from '../shared/logger';
 
 const port = normalizePort(process.env.PORT || '5000');
 server.set('port', port);
@@ -30,11 +31,11 @@ function onError(error: any) {
     const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
     switch (error.code) {
         case 'EACCES':
-            console.error(bind + ' requires elevated privileges');
+            logger.error(bind + ' requires elevated privileges');
             process.exit(1);
         break;
             case 'EADDRINUSE':
-            console.error(bind + ' is already in use');
+            logger.error(bind + ' is already in use');
             process.exit(1);
             break;
         default:
@@ -45,7 +46,7 @@ function onError(error: any) {
 function onListening() {
     const addr = httpServer.address();
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-    console.info(`Listening on ${bind} - Environment: ${process.env.NODE_ENV}`);
+    logger.info(`Listening on ${bind} - Environment: ${process.env.NODE_ENV}`);
 }
 
 process.on('SIGINT', () => process.exit());

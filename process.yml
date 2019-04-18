@@ -1,0 +1,6 @@
+apps:
+  - script: 'build/server/bin/www.js'
+    name: 'api-meli'
+    instances: 4
+    exec_mode: 'cluster'
+    max_memory_restart: '2G'

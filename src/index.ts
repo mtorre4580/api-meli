@@ -5,11 +5,14 @@ import * as methodOverride from 'method-override';
 import * as bodyParser from 'body-parser';
 import routes from './items';
 import errorHandler from './shared/error-handler';
+import cacheDNS from './shared/cache-dns';
 
 const server = express();
 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
+
+cacheDNS();
 
 server.use(compression());
 server.use(cors());

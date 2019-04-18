@@ -10,7 +10,7 @@ Backend de la aplicación interview de mercadolibre.
 La aplicación fue desarrollada con [Node](https://nodejs.org/es/).
 Se utilizó [Typescript](https://www.typescriptlang.org/) para evitar problemas en runtime en el typing de datos, 
 [Compression](https://www.npmjs.com/package/compression) para comprimir todo lo que se envía (middleware básico)
-[Express](https://expressjs.com) como framework base, SanitizeHTML para evitar problemas en la descripción en el detalle ya que viene en html crudo.
+[Express](https://expressjs.com) como framework base, [SanitizeHTML](https://www.npmjs.com/package/sanitize-html) para evitar problemas en la descripción en el detalle ya que viene en html crudo.
 Tracking de errores utilizando [Newrelic](https://newrelic.com/), distribution tracing.
 [Jest](https://jestjs.io/) para testing y [Supertest](https://www.npmjs.com/package/supertest) para levantar el server y mock de datos verificar el flujo completo.
 [Axios](https://github.com/axios/axios) como cliente HTTP.
@@ -18,6 +18,7 @@ Se siguió como buena practica definir por funcionalidad en vez de por tipo de e
 Todo lo relacionado a items se encuentra en `src/items`
 Middleware para el manejo de errores globales.
 [PM2](http://pm2.keymetrics.io/) para producción (4 instancias)
+Se integra el modulo [dnscache](https://www.npmjs.com/package/dnscache) para mejorar la performance en las peticiones cachea los dns
 
 Se puede acceder al [CHANGELOG](https://github.com/mtorre4580/backend-meli/blob/master/CHANGELOG.md)
 Development - Master

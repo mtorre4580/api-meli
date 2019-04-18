@@ -4,6 +4,8 @@ import * as cors from 'cors';
 import * as methodOverride from 'method-override';
 import * as bodyParser from 'body-parser';
 import * as expressHealthCheck from 'express-healthcheck';
+import * as swaggerDocument from './swagger.json';
+import * as swaggerUi from 'swagger-ui-express';
 import routes from './items';
 import errorHandler from './shared/error-handler';
 import cacheDNS from './shared/cache-dns';
@@ -21,6 +23,7 @@ server.use(methodOverride());
 server.use('/api/healthcheck', expressHealthCheck());
 server.use('/api', routes);
 server.use(errorHandler);
+server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 server.disable('etag');
 server.disable('x-powered-by');

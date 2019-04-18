@@ -71,6 +71,16 @@ Tracking de errores, distribution tracing configuración en `newrelic.js`
     <img src ="tracing.png" />
 </div>
 
+## Swagger 
+
+Se puede acceder a la documentación de la API desde el swagger
+
+[Swagger](http://localhost:5000/api-docs)
+
+<div style="text-align:center;margin:auto">
+    <img src ="swagger.png" />
+</div>
+
 ## Semantic Commits
 
 Se realiza la integración con commits semanticos que permiten tener luego a partir de estos un CHANGELOG autómatico a la hora de realizar una release. (feat, style, chore...)

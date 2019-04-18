@@ -1,0 +1,185 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Mercadolibre API",
+        "description": "Servicios REST para la aplicación de mercadolibre hecha en React",
+        "version": "1.0.0",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact":{
+            "email": "mtorre4580@outloook.com"
+        },
+        "license":{
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "tags":[
+        {
+            "name": "Items"
+        }
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "basePath": "/api",
+    "paths": {
+        "/items":{
+            "get":{
+                "summary": "Búsqueda de items",
+                "description": "Permite buscar items con el parámetro recibido por query param",
+                "x-swagger-router-controller": "ItemsController",
+                "operationId": "get",
+                "parameters": [
+                    {
+                      "name": "q",
+                      "in": "query",
+                      "description": "Parámetro de búsqueda",
+                      "required": false,
+                      "type": "string"
+                    }
+                ],
+                "tags": ["Items"],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "ref": "#/definitions/SearchResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/items/{id}":{
+            "get": {
+                "summary": "Detalle de una publicación",
+                "description": "Permite ver el detalle de una publicación por el id de la misma",
+                "operationId": "get",
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID de la publicación",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                "tags": ["Items"],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "ref": "#/definitions/DetailResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "SearchResponse": {
+            "type": "object",
+            "properties": {
+                "author": {
+                    "type": "object",
+                    "$ref": "#/definitions/Author"
+                },
+                "categories": {
+                    "type": "array",
+                    "category": {
+                        "type": "string"
+                    }
+                },
+                "items": {
+                    "type": "array",
+                    "$ref": "#/definitions/Item"
+                }
+            }
+        },
+        "DetailResponse": {
+            "type": "object",
+            "properties": {
+                "author": {
+                    "type": "object",
+                    "$ref": "#/definitions/Author"
+                },
+                "categories": {
+                    "type": "array",
+                    "category": {
+                        "type": "string"
+                    }
+                },
+                "item": {
+                    "type": "object",
+                    "$ref": "#/definitions/Item"
+                }
+            }
+        },
+        "Item": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "price" : {
+                    "$ref": "#/definitions/Price"
+                },
+                "condition": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "free_shipping": {
+                    "type": "boolean"
+                },
+                "sold_quantity": {
+                    "type": "number"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "Author": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "lastname": {
+                    "type": "string"
+                }
+            }
+        },
+        "Price": {
+            "type": "object",
+            "properties": {
+                "currency": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "number"
+                },
+                "decimals": {
+                    "type": "number"
+                }
+            }
+        }
+    }
+}

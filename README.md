@@ -4,6 +4,7 @@ Backend de la aplicación interview de mercadolibre.
 
 [![Build Status](https://travis-ci.com/mtorre4580/back-meli.svg?branch=master)](https://travis-ci.com/mtorre4580/back-meli)
 [![Coverage Status](https://coveralls.io/repos/github/mtorre4580/back-meli/badge.svg?branch=master)](https://coveralls.io/github/mtorre4580/back-meli?branch=master)
+[![Renovate Status](https://camo.githubusercontent.com/3602baed9c4e8b40cdb86f5309e282fbe0af58d0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656e6f766174652d656e61626c65642d627269676874677265656e2e737667)](https://camo.githubusercontent.com/3602baed9c4e8b40cdb86f5309e282fbe0af58d0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656e6f766174652d656e61626c65642d627269676874677265656e2e737667)
 [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 ## Overview
@@ -102,3 +103,8 @@ $ docker-compose up
 Para verificar la performance de la API se generó un script básico que simula varias peticiones HTTP a un endpoint
 utilizando [AutoCannon](https://github.com/mcollina/autocannon), hay que tener el servidor funcionando para correrlo
 abrir 2 consolas.
+
+## Renovate
+
+Integración con renovate bot para tener actualizadas las versiones de las dependencias, realiza pull request
+en development, esta configurado para que se realize de manera manual por seguridad...

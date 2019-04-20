@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/mtorre4580/back-meli/compare/v0.3.0...v0.4.0) (2019-04-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency newrelic to v5.6.4 ([ab3c755](https://github.com/mtorre4580/back-meli/commit/ab3c755))
+
+
+### Features
+
+* update renovate config ([cb521b2](https://github.com/mtorre4580/back-meli/commit/cb521b2))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/mtorre4580/back-meli/compare/v0.2.0...v0.3.0) (2019-04-18)
 

@@ -40,7 +40,7 @@
     "express": "4.16.4",
     "express-healthcheck": "0.1.0",
     "method-override": "3.0.0",
-    "newrelic": "5.6.4",
+    "newrelic": "5.13.1",
     "sanitize-html": "1.20.0",
     "winston": "3.2.1",
     "swagger-ui-express": "4.0.2"
@@ -55,7 +55,7 @@
     "@types/http-status": "0.2.30",
     "@types/jest": "24.0.11",
     "@types/method-override": "0.0.31",
-    "@types/newrelic": "4.11.0",
+    "@types/newrelic": "5.11.2",
     "@types/node": "11.13.6",
     "@types/supertest": "2.0.7",
     "@types/swagger-ui-express": "3.0.0",

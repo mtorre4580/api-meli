@@ -58,7 +58,7 @@
     "@types/newrelic": "4.11.0",
     "@types/node": "11.13.6",
     "@types/supertest": "2.0.7",
-    "@types/swagger-ui-express": "3.0.0",
+    "@types/swagger-ui-express": "3.0.1",
     "autocannon": "3.2.1",
     "coveralls": "3.0.3",
     "eslint-plugin-import": "2.17.2",

@@ -57,7 +57,7 @@
     "@types/method-override": "0.0.31",
     "@types/newrelic": "4.11.0",
     "@types/node": "11.13.6",
-    "@types/supertest": "2.0.7",
+    "@types/supertest": "2.0.10",
     "@types/swagger-ui-express": "3.0.0",
     "autocannon": "3.2.1",
     "coveralls": "3.0.3",

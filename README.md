@@ -1,6 +1,6 @@
-# backend-meli
+# api-meli
 
-Backend de la aplicación interview de mercadolibre.
+Mercadolibre interview application API.
 
 [![Build Status](https://travis-ci.com/mtorre4580/back-meli.svg?branch=master)](https://travis-ci.com/mtorre4580/back-meli)
 [![Coverage Status](https://coveralls.io/repos/github/mtorre4580/back-meli/badge.svg?branch=master)](https://coveralls.io/github/mtorre4580/back-meli?branch=master)
@@ -8,20 +8,20 @@ Backend de la aplicación interview de mercadolibre.
 [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 ## Overview
-La aplicación fue desarrollada con [Node](https://nodejs.org/es/).
-Se utilizó [Typescript](https://www.typescriptlang.org/) para evitar problemas en runtime en el typing de datos, 
-[Compression](https://www.npmjs.com/package/compression) para comprimir todo lo que se envía (middleware básico)
-[Express](https://expressjs.com) como framework base, [SanitizeHTML](https://www.npmjs.com/package/sanitize-html) para evitar problemas en la descripción en el detalle ya que viene en html crudo.
-Tracking de errores utilizando [Newrelic](https://newrelic.com/), distribution tracing.
-[Jest](https://jestjs.io/) para testing y [Supertest](https://www.npmjs.com/package/supertest) para levantar el server y mock de datos verificar el flujo completo.
-[Axios](https://github.com/axios/axios) como cliente HTTP.
-Se siguió como buena practica definir por funcionalidad en vez de por tipo de elemento (controllers, services, etc)
-Todo lo relacionado a items se encuentra en `src/items`
-Middleware para el manejo de errores globales.
-[PM2](http://pm2.keymetrics.io/) para producción (4 instancias)
-Se integra el modulo [dnscache](https://www.npmjs.com/package/dnscache) para mejorar la performance en las peticiones cachea los dns
+The application was developed with [Node](https://nodejs.org/es/).
+It was used [Typescript](https://www.typescriptlang.org/) to avoid runtime problems in data typing, 
+[Compression](https://www.npmjs.com/package/compression) to compress everything that is sent (basic middleware)
+[Express](https://expressjs.com) framework default, [SanitizeHTML](https://www.npmjs.com/package/sanitize-html) to avoid problems in the description in detail since it comes in raw html.
+Tracking errors [Newrelic](https://newrelic.com/), Distribution tracing.
+[Jest](https://jestjs.io/) for testing and [Supertest](https://www.npmjs.com/package/supertest) to raise the server and data mock check the complete flow.
+[Axios](https://github.com/axios/axios) client HTTP
+It was followed as a good practice to define by functionality instead of by type of element (controllers, services, etc)
+Everything related to items is in `src/items`
+Middleware for handling global errors.
+[PM2](http://pm2.keymetrics.io/) for production (4 instances)
+Add module [dnscache](https://www.npmjs.com/package/dnscache) to improve request performance caches dns
 
-Se puede acceder al [CHANGELOG](https://github.com/mtorre4580/backend-meli/blob/master/CHANGELOG.md)
+[CHANGELOG](https://github.com/mtorre4580/backend-meli/blob/master/CHANGELOG.md)
 Development - Master
 
 ## Start Api
@@ -46,13 +46,13 @@ $ npm run release
 
 ## Configuration
 
-La aplicación cuenta con diferentes configuraciones para los ambientes dev, staging, prod, se 
-pueden encontrar en `src/config`
-Esto permite tener los archivos de configuracion y los resources parametrizados.
+The application has different settings for the dev, staging, prod, se
+can find in `src/config`
+This allows to have the configuration files and the parameterized resources.
 
 ## Test (Jest / Supertest)
 
-La aplicación cuenta con test para verificar el flujo completo de la api de items `items.service.spec.ts`
+The application has tests to verify the complete flow of the items api `items.service.spec.ts`
 
 ```
 $ npm run test
@@ -60,7 +60,7 @@ $ npm run test
 
 ## Newrelic
 
-Tracking de errores, distribution tracing configuración en `newrelic.js`
+Tracking errors, distribution tracing configuration in `newrelic.js`
 
 ## Newrelic - Overview
 <div style="text-align:center;margin:auto">
@@ -74,7 +74,7 @@ Tracking de errores, distribution tracing configuración en `newrelic.js`
 
 ## Swagger 
 
-Se puede acceder a la documentación de la API desde el swagger
+API documentation can be accessed from the swagger
 
 [Swagger](http://localhost:5000/api-docs)
 
@@ -84,27 +84,26 @@ Se puede acceder a la documentación de la API desde el swagger
 
 ## Semantic Commits
 
-Se realiza la integración con commits semanticos que permiten tener luego a partir de estos un CHANGELOG autómatico a la hora de realizar una release. (feat, style, chore...)
+The integration is made with semantic commits that allow to have afterwards an automatic CHANGELOG when making a release. (feat, style, chore ...)
 
 Formato: `<type>(<scope>): <subject>`
 
 ## Docker
 
-Se agregó una configuración de docker `dockerfile` `docker-compose`
-La misma copia los archivos esenciales para el deploy a producción, instala las dependencias.
-Instala pm2 para manejar los procesos de node, levanta 4 instancias más info en el archivo `process.yml`
-
+Added a docker configuration `dockerfile`` docker-compose`
+It copies the essential files for the deployment to production, installs the dependencies.
+Install pm2 to handle node processes, raise 4 more info instances in `process.yml` file
 ```
 $ docker-compose up
 ```
 
 ## Performance (HTTP benchmarking)
 
-Para verificar la performance de la API se generó un script básico que simula varias peticiones HTTP a un endpoint
-utilizando [AutoCannon](https://github.com/mcollina/autocannon), hay que tener el servidor funcionando para correrlo
-abrir 2 consolas.
+To verify the API performance, a basic script was generated that simulates various HTTP requests to an endpoint
+using [AutoCannon] (https://github.com/mcollina/autocannon), you have to have the server working to run it
+open 2 consoles.
 
 ## Renovate
 
-Integración con renovate bot para tener actualizadas las versiones de las dependencias, realiza pull request
-en development, esta configurado para que se realize de manera manual por seguridad...
+Integration with renovate bot to have updated versions of dependencies, perform pull request
+In development, it is configured to be done manually for security 

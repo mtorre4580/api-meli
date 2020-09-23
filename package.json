@@ -41,7 +41,7 @@
     "express-healthcheck": "0.1.0",
     "method-override": "3.0.0",
     "newrelic": "5.6.4",
-    "sanitize-html": "1.20.0",
+    "sanitize-html": "1.27.5",
     "winston": "3.2.1",
     "swagger-ui-express": "4.0.2"
   },
